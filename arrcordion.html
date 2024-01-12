@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        summary::marker{
+            /* ::marker를 이용해 아코디언 메뉴를 여닫는 삼각형 스타일을 바꿀 수 있음 */
+            /* Safari의 경우 ::-webkit-details-marker 의사 요소를 사용해야 함 */
+            font-size: 1.5rem;
+            content: "📬";
+        }
+
+        [open] summary::marker{
+            /* open 속성을 사용해 닫힌 상태와 다른 스타일을 쉽게 부여할 수 있다. */
+            font-size: 1.5rem;
+            content: "📪";
+        }
+
+        summary:hover,
+        summary:focus {
+            cursor: pointer;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <!-- details와 summary 태그로 아코디언 메뉴 만들기 -->
+    <!-- open 속성을 이용하면 접속시 아코디언이 열린 상태가 됨 -->
+    <!-- open 속석은 시작 상태일 뿐임. -->
+    <details open>
+        <summary>My accordion</summary>
+        <p>My accordion content</p>
+    </details>
+</body>
+</html>

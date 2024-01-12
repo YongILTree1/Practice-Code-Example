@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        dialog::backdrop{
+            background: #fff5;
+            backdrop-filter: blur(4px);
+        }
+    </style>
+  </head>
+  <body>
+    <button>Open Modal</button>
+    
+    <!-- <dialog>
+      <form method="dialog">
+        <h3>This is a pretty dialog</h3>
+        <button type="submit">Close</button>
+      </form>
+    </dialog>
+     -->
+    <dialog>
+      <form method="dialog">
+        <p>Tabs or spaces?</p>
+        <button type="submit" value="wrong">Tabs</button>
+        <button type="submit" value="correct">Spaces</button>
+      </form>
+    </dialog>
+    <script>
+        document.querySelector("button").addEventListener('click', () => {
+            document.querySelector("dialog").showModal();
+        });
+
+        dialog.addEvenListener("close", function(){
+            console.log(dialog.returnValue);
+        });
+    </script>
+  </body>
+</html>
